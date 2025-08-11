@@ -84,3 +84,42 @@ scores = classify(N=1000, K=-0.8, r=1.0, beta=250.0, thresh=0.5)
 ## License
 
 MIT — see `LICENSE`.
+
+---
+
+## Proth Prime Hunt (fast path)
+
+We include `proth_search.py` — a simple, fast hunter for primes of the form **N = k·2^n + 1** (with k odd, k < 2^n).  
+It uses **Proth's theorem**: if there exists a base `a` such that `a^((N-1)/2) ≡ -1 (mod N)`, then `N` is prime.
+
+Quick run:
+```bash
+python proth_search.py --n-min 8 --n-max 22 --samples 400 --seed 2025 --out examples/proth_hits_fast.csv
+```
+
+This will write a CSV with columns: `n, k, digits, a_base, N`.
+
+**Note:** The ARP `G_score` filter is √N-costly and is best for classical-range sieves and science sweeps (ROC/PR). For huge N, Proth-first is the right ordering; then confirm with PRP/ECPP.
+
+---
+
+## Hybrid Workflow
+
+See [HYBRID.md](HYBRID.md) for the cutover policy between ARP prefilter and direct Proth/PRP/ECPP.
+CUDA ARP will drop into `S_resonance` inside `arpprimeamp/core.py`.
+
+
+## Hybrid Workflow
+
+See **[HYBRID.md](HYBRID.md)** for the cutover policy and CUDA integration points.  
+Planned CLI flags:
+```bash
+# ARP prefilter (CPU) for n < 1e6
+python -m arpprimeamp.cli --N 50000 --K -0.8 --r 1.0 --beta 250 --thresh 0.5 --out examples/arp_prefilter.csv
+
+# Proth hunt (fast path)
+python proth_search.py --n-min 8 --n-max 22 --samples 400 --out examples/proth_hits_fast.csv
+
+# (Soon) Hybrid run combining both, with optional CUDA:
+python proth_search.py --hybrid --cuda-arp --n-min 20 --n-max 28 --samples 2000 --out examples/proth_hybrid.csv
+```
