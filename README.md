@@ -123,3 +123,16 @@ python proth_search.py --n-min 8 --n-max 22 --samples 400 --out examples/proth_h
 # (Soon) Hybrid run combining both, with optional CUDA:
 python proth_search.py --hybrid --cuda-arp --n-min 20 --n-max 28 --samples 2000 --out examples/proth_hybrid.csv
 ```
+
+## Recent Proth Prime Milestones
+
+Examples of larger Proth primes found with `proth_search.py` are recorded in
+`examples/proth_milestones.csv`:
+
+| digits | n | k | Proth witness `a` |
+|-------:|---:|----:|------------------|
+| 33 | 100 | 165 | 142319261706751564351900477899681 |
+| 80 | 250 | 5557 | 5265830172549707361254338966742337977464863091002437782540684035233744041656807 |
+| 103 | 332 | 463 | 1813898316735580758952332516502987522627388727429456708218625940217810078125920916261977401280424576975 |
+
+Each line of the CSV also includes the full `N = k·2^n + 1` value.
