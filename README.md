@@ -34,8 +34,8 @@ High \(G_n\) ⇒ likely **composite**. Low \(G_n\) ⇒ **prime‑candidate**.
 ## Quickstart
 
 ```bash
-pip install -r requirements.txt
-python -m arpprimeamp.cli --N 500 --K -0.8 --r 1.0 --beta 250 --thresh 0.5 --out examples/demo_500.csv
+pip install -e .
+arpprimeamp --N 500 --K -0.8 --r 1.0 --beta 250 --thresh 0.5 --out examples/demo_500.csv
 ```
 
 You’ll get a CSV with columns: `n, G_score, pred, truth`.
@@ -52,6 +52,10 @@ Settings: \(K=-0.8, r=1.0, \beta=250, \text{thresh}=0.5\)
 
 Reproduce by running the command above.
 
+### ROC / Precision–Recall (N = 5000)
+
+Generated curves are omitted from the repository to avoid large binary files. Run `paramsweep.py` to produce ROC and precision–recall plots for your own runs.
+
 ## API (Python)
 
 ```python
@@ -66,6 +70,7 @@ scores = classify(N=1000, K=-0.8, r=1.0, beta=250.0, thresh=0.5)
 - `arpprimeamp/cli.py` — command‑line tool to run ranges and write CSV
 - `paramsweep.py` — sweep over (K, r, beta, thresh) and emit metrics CSV
 - `examples/` — sample outputs
+- `examples/sweep_results_2000.csv` — parameter sweep for N=2000
 - `tests/` — sanity checks
 
 ## Why this matters
