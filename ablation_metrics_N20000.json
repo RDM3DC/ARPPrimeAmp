@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "N": 20000,
+    "K": -0.8,
+    "r": 1.0,
+    "beta": 250.0,
+    "thresh": 0.5,
+    "runtime_sec": 1.4018559455871582
+  },
+  "pi_a": {
+    "accuracy": 0.888144407220361,
+    "precision_composite": 0.8880044057274457,
+    "recall_composite": 1.0,
+    "CRR": 0.9987499374968748,
+    "survivors": 25,
+    "TP": 17737,
+    "FP": 2237,
+    "TN": 25,
+    "FN": 0
+  },
+  "pi": {
+    "accuracy": 0.888044402220111,
+    "precision_composite": 0.887915498598318,
+    "recall_composite": 1.0,
+    "CRR": 0.9988499424971249,
+    "survivors": 23,
+    "TP": 17737,
+    "FP": 2239,
+    "TN": 23,
+    "FN": 0
+  }
+}
