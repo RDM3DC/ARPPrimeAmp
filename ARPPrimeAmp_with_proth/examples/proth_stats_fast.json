@@ -1,0 +1,10 @@
+{
+  "n_range": [
+    8,
+    22
+  ],
+  "samples_per_n": 400,
+  "tested_candidates": 6000,
+  "hits": 676,
+  "elapsed_sec": 0.4302535057067871
+}
