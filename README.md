@@ -1,5 +1,7 @@
 # ARPPrimeAmp
 
+[![Sponsor RDM3DC](https://img.shields.io/badge/Sponsor-RDM3DC-ff69b4?logo=github)](https://github.com/sponsors/RDM3DC)
+
 **ARP‑Amplified Adaptive‑π Prime Sieve** — a physics‑inspired composite filter that combines a curvature‑adjusted π (\(\pi_a\)) with the Adaptive Resistance Principle (ARP) to produce a continuous score \(G_n\) that lights up when a divisor exists.
 
 > Not a magic prime oracle — think **sieve + signal**. Use ARPPrimeAmp to prune composites fast, then confirm survivors with a deterministic test (e.g., Miller–Rabin).
